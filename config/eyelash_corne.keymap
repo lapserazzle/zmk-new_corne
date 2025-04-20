@@ -56,13 +56,13 @@
         default_layer {
             display-name = "DVORAK";
             bindings = <
-&kp TAB    &kp SQT   &kp COMMA  &kp DOT       &kp P  &kp Y                                     &mmv MOVE_UP                     &kp F        &kp G     &kp C  &kp R  &kp L  &kp FSLH
-&lt 4 ESC  &kp A     &kp O      &kp E         &kp U  &kp I                     &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &kp D        &kp H     &kp T  &kp N  &kp S  &kp MINUS
-&kp LCTRL  &kp SEMI  &kp Q      &kp J         &kp K  &kp X        &mkp RCLK                    &mmv MOVE_DOWN                   &kp N        &kp M     &kp W  &kp V  &kp Z  &kp RSHIFT
-                                &kp LEFT_ALT  &mo 2  &lt 4 SPACE                                                                &lt 4 ENTER  &kp BSPC  &mo 3
+&kp TAB    &kp SQT   &kp COMMA  &kp DOT  &kp P  &kp Y                                   &mmv MOVE_UP                     &kp F      &kp G     &kp C     &kp R  &kp L  &kp FSLH
+&lt 5 ESC  &kp A     &kp O      &kp E    &kp U  &kp I                   &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &kp D      &kp H     &kp T     &kp N  &kp S  &kp MINUS
+&kp LSHFT  &kp SEMI  &kp Q      &kp J    &kp K  &kp X      &mkp RCLK                    &mmv MOVE_DOWN                   &kp N      &kp M     &kp W     &kp V  &kp Z  &kp RCTRL
+                                &mo 3    &mo 4  &kp SPACE                                                                &kp ENTER  &kp BSPC  &kp RALT
             >;
 
-            sensor-bindings = <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+            sensor-bindings = <&scroll_encoder>;
         };
 
         Keymap_2 {
@@ -75,6 +75,18 @@
 
             label = "OWERTY";
             sensor-bindings = <&scroll_encoder>;
+        };
+
+        Keymap_3 {
+            bindings = <
+&trans  &kp Q  &kp W  &kp F   &kp P   &kp G                     &trans          &kp J   &kp L   &kp U      &kp Y    &kp SEMI  &kp MINUS
+&trans  &kp A  &kp R  &kp S   &kp T   &kp D             &trans  &trans  &trans  &kp H   &kp N   &kp E      &kp I    &kp O     &kp APOS
+&trans  &kp Z  &kp X  &kp C   &kp V   &kp B   &trans            &trans          &kp K   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                      &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+            label = "COLEMAK";
         };
 
         lower_layer {
@@ -105,7 +117,7 @@
             display-name = "Fn";
             bindings = <
 &studio_unlock  &kp F1      &kp F2  &kp F3       &kp F4  &kp F5                                &mmv MOVE_UP                     &kp F6       &kp F7  &kp F8       &kp F9      &kp F10          &kp F11
-&trans          &sl 0       &sl 1   &trans       &trans  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &trans  &trans       &trans      &kp PRINTSCREEN  &kp F12
+&trans          &sl 0       &sl 1   &sl 2        &trans  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &trans  &trans       &trans      &kp PRINTSCREEN  &kp F12
 &trans          &sys_reset  &trans  &bootloader  &trans  &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans  &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
                                     &trans       &trans  &trans                                                                 &trans       &trans  &trans
             >;
